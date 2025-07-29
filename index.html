@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Coin Card Pull Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <div class="left-panel">
+      <h2>Coin: <span id="coin-count">0</span></h2>
+      <button onclick="generateCoins()">🎲 Generate Coins</button>
+      <button onclick="pullOneCard()">🎴 Pull 1 Card (10 coins)</button>
+      <button onclick="pullTenCards()">🧧 Pull 10 Cards (100 coins)</button>
+
+      <h3>Card Totals:</h3>
+      <ul id="card-totals">
+        <li>A1: <span id="total-A1">0</span></li>
+        <li>A2: <span id="total-A2">0</span></li>
+        <li>B1: <span id="total-B1">0</span></li>
+        <li>B2: <span id="total-B2">0</span></li>
+        <li>C: <span id="total-C">0</span></li>
+      </ul>
+    </div>
+
+    <div class="right-panel">
+      <h2>Pull Results</h2>
+      <div id="results" class="results-container"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
