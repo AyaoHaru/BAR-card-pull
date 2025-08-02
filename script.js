@@ -39,14 +39,14 @@ function getRandomCard() {
   return cardTypes[randomIndex];
 }
 
-function displayCard(cardName, count = 1) {
+function displayCard(cardName) {
   const container = document.getElementById("results");
   const card = document.createElement("div");
   card.className = "card";
   const data = cardData[cardName];
   card.innerHTML = `
     <img src="${data.img}" alt="${cardName}">
-    <h4>${cardName} ${count > 1 ? `x${count}` : ""}</h4>
+    <h4>${cardName}</h4>
     <p>${data.text}</p>
   `;
   container.appendChild(card);
@@ -90,3 +90,4 @@ function pullTenCards() {
     displayCard(card, count);
   }
 }
+
