@@ -17,6 +17,16 @@ const cardData = {
 
 const cardTypes = Object.keys(cardData);
 
+function showMessage(text, duration = 2000) {
+  const messageDiv = document.getElementById("message");
+  messageDiv.textContent = text;
+  messageDiv.style.display = "block";
+
+  setTimeout(() => {
+    messageDiv.style.display = "none";
+  }, duration);
+}
+
 function updateCoinDisplay() {
   document.getElementById("coin-count").textContent = coins;
 }
@@ -68,7 +78,8 @@ function displayCard(cardName) {
 
 function pullOneCard() {
   if (coins < 10) {
-    alert("Not enough coins!");
+    //alert("Not enough coins!");
+    showMessage("Not enough coins!");
     return;
   }
   coins -= 10;
@@ -107,7 +118,8 @@ function pullTenCards() {
 */
 function pullTenCards() {
   if (coins < 100) {
-    alert("Not enough coins!");
+    //alert("Not enough coins!");
+    showMessage("Not enough coins!");
     return;
   }
   coins -= 100;
@@ -129,6 +141,7 @@ function pullTenCards() {
     displayCard(card); // Show every card instance separately
   }
 }
+
 
 
 
