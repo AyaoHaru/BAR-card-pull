@@ -17,15 +17,20 @@ const cardData = {
 
 const cardTypes = Object.keys(cardData);
 
-function showMessage(text, duration = 2000) {
+function showMessage(text, duration = 5000) {
   const messageDiv = document.getElementById("message");
   messageDiv.textContent = text;
+  messageDiv.classList.remove("hidden");
   messageDiv.style.display = "block";
 
   setTimeout(() => {
-    messageDiv.style.display = "none";
+    messageDiv.classList.add("hidden");
+    setTimeout(() => {
+      messageDiv.style.display = "none";
+    }, 500); // match the transition duration
   }, duration);
 }
+
 
 function updateCoinDisplay() {
   document.getElementById("coin-count").textContent = coins;
@@ -141,6 +146,7 @@ function pullTenCards() {
     displayCard(card); // Show every card instance separately
   }
 }
+
 
 
 
