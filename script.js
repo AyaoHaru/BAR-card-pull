@@ -31,7 +31,8 @@ function generateCoins() {
   const added = Math.floor(Math.random() * 91) + 10; // 10–100 coins
   coins += added;
   updateCoinDisplay();
-  alert(`You got ${added} coins!`);
+  //alert(`You got ${added} coins!`);
+  showMessage(`You got ${added} coins!`);
 }
 
 function getRandomCard() {
@@ -128,5 +129,6 @@ function pullTenCards() {
     displayCard(card); // Show every card instance separately
   }
 }
+
 
 
