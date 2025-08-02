@@ -54,6 +54,12 @@ body {
   font-size: 1.1em;
   text-align: center;
   border-radius: 5px;
-  transition: opacity 0.3s;
+  transition: opacity 0.5s;
+  opacity: 1;
 }
+
+.message.hidden {
+  opacity: 0;
+}
+
 
