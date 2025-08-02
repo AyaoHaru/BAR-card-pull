@@ -38,7 +38,20 @@ function getRandomCard() {
   const randomIndex = Math.floor(Math.random() * cardTypes.length);
   return cardTypes[randomIndex];
 }
-
+/*
+function displayCard(cardName) {
+  const container = document.getElementById("results");
+  const card = document.createElement("div");
+  card.className = "card";
+  const data = cardData[cardName];
+  card.innerHTML = `
+    <img src="${data.img}" alt="${cardName}">
+    <h4>${cardName}</h4>
+    <p>${data.text}</p>
+  `;
+  container.appendChild(card);
+}
+*/
 function displayCard(cardName) {
   const container = document.getElementById("results");
   const card = document.createElement("div");
@@ -67,7 +80,7 @@ function pullOneCard() {
   document.getElementById("results").innerHTML = ""; // Clear
   displayCard(card);
 }
-
+/*
 function pullTenCards() {
   if (coins < 100) {
     alert("Not enough coins!");
@@ -90,4 +103,30 @@ function pullTenCards() {
     displayCard(card, count);
   }
 }
+*/
+function pullTenCards() {
+  if (coins < 100) {
+    alert("Not enough coins!");
+    return;
+  }
+  coins -= 100;
+  updateCoinDisplay();
+
+  const pulledCards = []; // Array to store each pulled card
+  for (let i = 0; i < 10; i++) {
+    const card = getRandomCard();
+    pulledCards.push(card);
+    cardTotals[card]++;
+  }
+
+  updateCardTotals();
+
+  const container = document.getElementById("results");
+  container.innerHTML = ""; // Clear previous results
+
+  for (let card of pulledCards) {
+    displayCard(card); // Show every card instance separately
+  }
+}
+
 
